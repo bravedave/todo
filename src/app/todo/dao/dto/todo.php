@@ -10,4 +10,6 @@ class todo extends dto {
   public $updated = '';
 
   public $description = '';
+
+  public $user_id = 0;
 }

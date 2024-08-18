@@ -3,6 +3,7 @@
 namespace todo\dao;
 
 use bravedave\dvc\{dao, dtoSet};
+use currentUser;
 
 class todo extends dao {
   protected $_db_name = 'todo';
@@ -10,13 +11,13 @@ class todo extends dao {
 
   function getMatrix(): array {
 
-    $sql = 'SELECT * FROM todo';
+    $sql = 'SELECT * FROM `todo` WHERE `user_id` = ' . currentUser::id();
     return (new dtoSet)($sql);
-    return [];
   }
 
   public function Insert($a) {
     $a['created'] = $a['updated'] = self::dbTimeStamp();
+    $a['user_id'] = currentUser::id();
     return parent::Insert($a);
   }
 

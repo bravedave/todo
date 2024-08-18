@@ -16,6 +16,7 @@ $dbc = bravedave\dvc\sys::dbCheck('todo');
 $dbc->defineField('created', 'datetime');
 $dbc->defineField('updated', 'datetime');
 
-$dbc->defineField('description', 'text');
+$dbc->defineField('description', 'varchar');
+$dbc->defineField('user_id', 'bigint');
 
 $dbc->check();  // actually do the work, check that table and fields exist
