@@ -1,0 +1,10 @@
+{
+  "require": {
+    "bravedave/dvc": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/app/"
+    }
+  }
+}
